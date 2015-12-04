@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-sm-3 col-md-2 sidebar">
+    <ng-include src="'partials/nav.html'"></ng-include>
+  </div>
+  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1>Here's what the next {{forecast.cnt}} days look like for {{forecast.city.name}}</h1>
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th></th>
+        <th ng-repeat="item in forecast.list">
+          {{item.day}}
+        </th>
+      </tr>
+      <tr>
+        <th>Conditions</th>
+        <td ng-repeat="item in forecast.list">{{item.weather[0].main}}</td>
+      </tr>
+      <tr>
+        <th>Temperature (C)</th>
+        <td ng-repeat="item in forecast.list">{{item.temp.day}}</td>
+      </tr>
+      <tr>
+        <th>Low (C)</th>
+        <td ng-repeat="item in forecast.list">{{item.temp.min}}</td>
+      </tr>
+      <tr>
+        <th>High (C)</th>
+        <td ng-repeat="item in forecast.list">{{item.temp.max}}</td>
+      </tr>
+      <tr>
+        <th>Pressure (hPa)</th>
+        <td ng-repeat="item in forecast.list">{{item.pressure}}</td>
+      </tr>
+      <tr>
+        <th>Humidity (%)</th>
+        <td ng-repeat="item in forecast.list">{{item.humidity}}</td>
+      </tr>
+      <tr>
+        <th>Wind (m/s)</th>
+        <td ng-repeat="item in forecast.list">{{item.speed}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

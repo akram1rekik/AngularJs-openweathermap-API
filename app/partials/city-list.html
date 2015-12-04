@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-sm-3 col-md-2 sidebar">
+    <ng-include src="'partials/nav.html'"></ng-include>
+    <ng-include src="'partials/city-add.html'"></ng-include>
+  </div>
+  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th></th>
+        <th>
+          City
+        </th>
+        <th>
+          Conditions
+        </th>
+        <th>
+          Temperature (C)
+        </th>
+        <th>
+          Cloudiness (%)
+        </th>
+        <th>
+          Pressure (hPa)
+        </th>
+        <th>
+          Humidity (%)
+        </th>
+        <th>
+          Wind (m/s)
+        </th>
+      </tr>
+      <tr ng-repeat="city in cities">
+        <td>
+          <a ng-click="remove_city($index)">x</a>
+        </td>
+        <td>
+          <a href="#/cities/{{city.id}}">{{city.name}}</a>
+        </td>
+        <td>
+          <i class="owf owf-{{city.weather[0].id}} owf-3x"></i>{{city.weather[0].main}}
+        </td>
+        <td>
+          {{city.main.temp}}
+        </td>
+        <td>
+          {{city.clouds.all}}
+        </td>
+        <td>
+          {{city.main.pressure}}
+        </td>
+        <td>
+          {{city.main.humidity}}
+        </td>
+        <td>
+          {{city.wind.speed}}
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

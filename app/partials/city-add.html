@@ -1,0 +1,15 @@
+<table class="table table-hover table-condensed">
+  <tr>
+    <td>
+      <div class="form-group">
+      <label for="citySearchInput">Add City</label>
+      <input ng-model="citySearch" id="citySearchInput" class="form-control" placeholder="Filter...">
+    </div>
+    </td>
+  </tr>
+  <tr ng-repeat="city in all_cities | filter:citySearch">
+  <td>
+    <a ng-click="add_city(city.id)">{{city.name}}</a>
+  </td>
+  <tr>
+</table>
