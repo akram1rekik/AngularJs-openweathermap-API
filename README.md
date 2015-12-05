@@ -6,10 +6,8 @@ AngularJs + openweathermap API
 
 2 `cd testLunchio`
 
-3 `npm install`
+3 `npm start`
 
-4 `bower install`
-
-5 `npm start`
+##### Go to `localhost:8000`
 
 
